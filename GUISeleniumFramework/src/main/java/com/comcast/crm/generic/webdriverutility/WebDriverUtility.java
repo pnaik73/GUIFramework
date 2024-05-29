@@ -49,11 +49,11 @@ public class WebDriverUtility {
 	 * @param elemnet
 	 * @throws InterruptedException
 	 */
-	public void waitandClickAjaxElement(WebDriver driver , By loginBtn) throws InterruptedException {
+	public void waitandClickAjaxElement(WebDriver driver , By element) throws InterruptedException {
 		int count = 20;
 		while(count < 20) {
 		       try {
-		    	   driver.findElement(loginBtn).click();
+		    	   driver.findElement(element).click();
 		       }catch (Exception e) {
 		    	   Thread.sleep(1000);
 		    	   count++;
