@@ -13,6 +13,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -48,11 +49,11 @@ public class WebDriverUtility {
 	 * @param elemnet
 	 * @throws InterruptedException
 	 */
-	public void waitandClickAjaxElement(WebDriver driver , By element) throws InterruptedException {
+	public void waitandClickAjaxElement(WebDriver driver , By loginBtn) throws InterruptedException {
 		int count = 20;
 		while(count < 20) {
 		       try {
-		    	   driver.findElement(element).click();
+		    	   driver.findElement(loginBtn).click();
 		       }catch (Exception e) {
 		    	   Thread.sleep(1000);
 		    	   count++;
@@ -271,7 +272,6 @@ public class WebDriverUtility {
 		TakesScreenshot eDriver = (TakesScreenshot)driver;
 		File srcFile = eDriver.getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(srcFile, new File("./screenshot/"+testName+".png"));
-	   
 	}
 	
 }

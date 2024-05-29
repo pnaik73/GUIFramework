@@ -16,21 +16,21 @@ import com.comcast.crm.generic.webdriverutility.WebDriverUtility;
  * Contains Login page elements & business lib like login()
  *
  */  
-public class LoginPage extends WebDriverUtility{                              // Rule-1  create a separte java class
+public class UserLoginPage extends WebDriverUtility{                              // Rule-1  create a separte java class
                            
 	WebDriver driver;
-	 public LoginPage(WebDriver driver) {             //Rule 3 : Object Initialization
+	 public UserLoginPage(WebDriver driver) {             //Rule 3 : Object Initialization
 		 this.driver = driver;
 		 PageFactory.initElements(driver, this);
 	 }
 	                           
-	@FindBy(name="user_name")                        // Rule-2 Object Creation
+	@FindBy(name="username")                        // Rule-2 Object Creation
 	private WebElement usernameEdt;
 	
-	@FindBy(name="user_password")
+	@FindBy(name="password")
 	private WebElement passwordEdt;
 	
-	@FindBy(id = "submitButton")
+	@FindBy(id = "buttn")
 	private WebElement loginBtn;
 	     
 	
@@ -52,8 +52,9 @@ public class LoginPage extends WebDriverUtility{                              //
  * @param url
  * @param username
  * @param password
+ * @throws InterruptedException 
  */
-	 public void loginToapp(String url , String username , String password) {
+	 public void loginToapp(String url , String username , String password) throws InterruptedException {
 		 waitForPageToLoad(driver);
 		 driver.get(url);	
 		// driver.manage().window().maximize();
